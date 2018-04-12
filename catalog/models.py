@@ -227,15 +227,18 @@ class Order(models.Model):
             self.status = 'sold'
             self.save()
 
+            literallykillme = 0
+            items_bought = ''
+            for x in self.active_items():
 
-            literallykillme = literallykillme + 1
+                literallykillme = literallykillme + 1
 
-            if len(self.active_items()) == 1:
-                items_bought = str(x.product.name)
-            elif literallykillme == len(self.active_items()):
-                items_bought = items_bought + 'and ' + str(x.product.name)
-            else:
-                items_bought = items_bought + str(x.product.name) + ', '
+                if len(self.active_items()) == 1:
+                    items_bought = str(x.product.name)
+                elif literallykillme == len(self.active_items()):
+                    items_bought = items_bought + 'and ' + str(x.product.name)
+                else:
+                    items_bought = items_bought + str(x.product.name) + ', '
 
                 # items_bought = items_bought + ', ' + x.product.name # fix beginning comma
             tax_total= (self.total_price/107)*7
