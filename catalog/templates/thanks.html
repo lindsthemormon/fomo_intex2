@@ -1,11 +1,13 @@
 <%inherit file = "app_base.html"/>
 
 <%block name="content_center">
-    <div class="content">
+    <div class="content cen">
         <h1>Thank You!</h1>
-        <p>Your purchase is on its way.</p>
+        <p>Your purchase is on its way. Please check your email, ${your_email}, for a receipt!</p>
+        <br /><br />
         <a href = '/catalog/index/'>
             <button type="button" class="btn btn-primary">Continue shopping</button>
         </a>
     </div>
+    <br /><br /><br />
 </%block>

@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523555411.4321456
+_modified_time = 1523559415.9930224
 _enable_loop = True
-_template_filename = 'C:/Users/Linds/desktop/intex2_fomo/catalog/templates/cart.html'
+_template_filename = 'C:/Users/Linds/Desktop/fomo_intex2/catalog/templates/cart.html'
 _template_uri = 'cart.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -32,12 +32,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def top_center():
-            return render_top_center(context._locals(__M_locals))
         taxprice = context.get('taxprice', UNDEFINED)
-        total = context.get('total', UNDEFINED)
         def content_center():
             return render_content_center(context._locals(__M_locals))
+        total = context.get('total', UNDEFINED)
+        def top_center():
+            return render_top_center(context._locals(__M_locals))
         items = context.get('items', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
@@ -72,11 +72,11 @@ def render_top_center(context,**pageargs):
 def render_content_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        total = context.get('total', UNDEFINED)
+        taxprice = context.get('taxprice', UNDEFINED)
+        items = context.get('items', UNDEFINED)
         def content_center():
             return render_content_center(context)
-        items = context.get('items', UNDEFINED)
-        taxprice = context.get('taxprice', UNDEFINED)
+        total = context.get('total', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n<div>\r\n\r\n    <table class="table" style=\'width:100%\'>\r\n        <thead>\r\n        <tr>\r\n            <th>Name</th>\r\n            <th>Quantity</th>\r\n            <th>Price</th>\r\n            <th>Extended Price</th>\r\n            <th>Remove From Cart</th>\r\n\r\n        </tr>\r\n        </thead>\r\n        <tbody>\r\n')
         for c in items:
@@ -103,6 +103,6 @@ def render_content_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/Linds/desktop/intex2_fomo/catalog/templates/cart.html", "uri": "cart.html", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "43": 1, "44": 2, "49": 6, "54": 63, "60": 4, "66": 4, "72": 9, "81": 9, "82": 25, "83": 26, "84": 28, "85": 28, "86": 31, "87": 31, "88": 34, "89": 34, "90": 37, "91": 37, "92": 40, "93": 40, "94": 44, "95": 51, "96": 51, "97": 53, "98": 53, "104": 98}}
+{"filename": "C:/Users/Linds/Desktop/fomo_intex2/catalog/templates/cart.html", "uri": "cart.html", "source_encoding": "utf-8", "line_map": {"18": 2, "31": 0, "43": 1, "44": 2, "49": 6, "54": 63, "60": 4, "66": 4, "72": 9, "81": 9, "82": 25, "83": 26, "84": 28, "85": 28, "86": 31, "87": 31, "88": 34, "89": 34, "90": 37, "91": 37, "92": 40, "93": 40, "94": 44, "95": 51, "96": 51, "97": 53, "98": 53, "104": 98}}
 __M_END_METADATA
 """

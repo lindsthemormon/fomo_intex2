@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523321560.219288
+_modified_time = 1523559418.7529602
 _enable_loop = True
-_template_filename = '/Users/matthewdembinski/Downloads/fomo/catalog/templates/checkout.html'
+_template_filename = 'C:/Users/Linds/Desktop/fomo_intex2/catalog/templates/checkout.html'
 _template_uri = 'checkout.html'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -34,10 +34,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        totalPrice = context.get('totalPrice', UNDEFINED)
         fl = _mako_get_namespace(context, 'fl')
         def content_center():
             return render_content_center(context._locals(__M_locals))
-        totalPrice = context.get('totalPrice', UNDEFINED)
         def top_center():
             return render_top_center(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -64,7 +64,7 @@ def render_top_center(context,**pageargs):
         def top_center():
             return render_top_center(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<h2 id="shopTitle">Shopping Cart</h2>\r\n')
+        __M_writer('\r\n<h1 id="shopTitle">Shopping Cart</h1>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -73,10 +73,10 @@ def render_top_center(context,**pageargs):
 def render_content_center(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        totalPrice = context.get('totalPrice', UNDEFINED)
         fl = _mako_get_namespace(context, 'fl')
         def content_center():
             return render_content_center(context)
-        totalPrice = context.get('totalPrice', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n    <h3>Total Price: $')
         __M_writer(str( totalPrice ))
@@ -84,9 +84,9 @@ def render_content_center(context,**pageargs):
         __M_writer('\r\n    ')
         def ccall(caller):
             def body():
-                settings = context.get('settings', UNDEFINED)
-                cart = context.get('cart', UNDEFINED)
                 int = context.get('int', UNDEFINED)
+                cart = context.get('cart', UNDEFINED)
+                settings = context.get('settings', UNDEFINED)
                 __M_writer = context.writer()
                 __M_writer('\r\n  <div class="text-center">\r\n    <script\r\n        src="https://checkout.stripe.com/checkout.js"\r\n        class="stripe-button"\r\n        data-key="')
                 __M_writer(str(settings.STRIPE_PUBLIC_KEY))
@@ -108,6 +108,6 @@ def render_content_center(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/matthewdembinski/Downloads/fomo/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"18": 2, "27": 13, "33": 0, "44": 1, "45": 2, "50": 6, "55": 29, "61": 4, "67": 4, "73": 10, "81": 10, "82": 11, "83": 11, "84": 13, "91": 14, "92": 19, "93": 19, "94": 20, "95": 20, "100": 14, "103": 28, "109": 103}}
+{"filename": "C:/Users/Linds/Desktop/fomo_intex2/catalog/templates/checkout.html", "uri": "checkout.html", "source_encoding": "utf-8", "line_map": {"18": 2, "27": 13, "33": 0, "44": 1, "45": 2, "50": 6, "55": 29, "61": 4, "67": 4, "73": 10, "81": 10, "82": 11, "83": 11, "84": 13, "91": 14, "92": 19, "93": 19, "94": 20, "95": 20, "100": 14, "103": 28, "109": 103}}
 __M_END_METADATA
 """

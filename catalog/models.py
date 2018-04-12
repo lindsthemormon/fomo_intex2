@@ -11,6 +11,7 @@ import stripe
 import smtplib
 import yagmail
 from decimal import Decimal
+import time
 
 
 
@@ -229,31 +230,43 @@ class Order(models.Model):
 
             literallykillme = 0
             items_bought = ''
-            for x in self.active_items():
+            bought_prods = self.active_items().exclude(product__name ="Sales Tax")
+            for x in bought_prods:
 
                 literallykillme = literallykillme + 1
 
-                if len(self.active_items()) == 1:
+                if len(bought_prods) == 1:
                     items_bought = str(x.product.name)
-                elif literallykillme == len(self.active_items()):
+                elif literallykillme == len(bought_prods):
                     items_bought = items_bought + 'and ' + str(x.product.name)
                 else:
                     items_bought = items_bought + str(x.product.name) + ', '
 
+                if x.product.TITLE =='Bulk':
+                    x.product.quantity -= x.quantity
+                    if x.product.quantity == 0:
+                        x.product.status ='I'
+
+                # update status for IndividualProducts
+                else:
+                    x.product.status='I'
+
+                x.product.save()
+                x.save()
+
+
                 # items_bought = items_bought + ', ' + x.product.name # fix beginning comma
             tax_total= (self.total_price/107)*7
             prod_total=self.total_price - tax_total
-            yag = yagmail.SMTP('family.oriented.co@gmail.com', '@13x@13x')
+            yag = yagmail.SMTP('shopfomo.me@gmail.com', 'POOPonast1ck')
             content1 = 'Thank you for placing an order with FOMO on %s!' % ((self.order_date.strftime('%m/%d/%y')))
             empty= ''
-            content2 = 'You have purchased %s. Your items will be shipped today. Please allow 2-5 business days for arrival.' % items_bought
+            content2 = 'You have purchased: %s. Please allow 2-5 business days for arrival.' % items_bought
             content3 = 'Your items totaled $%.2f, with a $%.2f sales tax, your card was charged $%.2f.' % ((prod_total), (tax_total), (self.total_price))
             # contents = 'Thank you for placing an order with FOMO on %s! Your %s will be shipped today. Please allow 2-5 business days for arrival. Your items totaled $%.2f, with a $%.2f sales tax, your card was charged $%.2f.' % ((self.order_date.strftime('%m/%d/%y'), items_bought, (prod_total), (tax_total), (self.total_price) ))
             subject = 'Order %s Confirmation' % self.id
             recipient = self.user.email
             yag.send(recipient, subject, [content1, empty, content2, empty, content3])
-
-
 
 
 class OrderItem(models.Model):

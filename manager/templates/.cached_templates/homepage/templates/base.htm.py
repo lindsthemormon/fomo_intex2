@@ -5,9 +5,9 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523550365.7911477
+_modified_time = 1523569978.8925416
 _enable_loop = True
-_template_filename = 'C:/Users/Linds/desktop/intex2_fomo/homepage/templates/base.htm'
+_template_filename = 'C:/Users/Linds/Desktop/fomo_intex2/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
 _source_encoding = 'utf-8'
 import django_mako_plus
@@ -23,27 +23,27 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        self = context.get('self', UNDEFINED)
-        request = context.get('request', UNDEFINED)
-        def footer():
-            return render_footer(context._locals(__M_locals))
-        def content_center():
-            return render_content_center(context._locals(__M_locals))
-        def header_maintenance():
-            return render_header_maintenance(context._locals(__M_locals))
-        def bottom():
-            return render_bottom(context._locals(__M_locals))
-        def top_center():
-            return render_top_center(context._locals(__M_locals))
-        def content_left():
-            return render_content_left(context._locals(__M_locals))
-        def content_right():
-            return render_content_right(context._locals(__M_locals))
         def skip():
             return render_skip(context._locals(__M_locals))
+        def content_left():
+            return render_content_left(context._locals(__M_locals))
+        def footer():
+            return render_footer(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        request = context.get('request', UNDEFINED)
+        def top_center():
+            return render_top_center(context._locals(__M_locals))
         def nav_main():
             return render_nav_main(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def bottom():
+            return render_bottom(context._locals(__M_locals))
+        def header_maintenance():
+            return render_header_maintenance(context._locals(__M_locals))
+        def content_right():
+            return render_content_right(context._locals(__M_locals))
+        def content_center():
+            return render_content_center(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n\r\n<!DOCTYPE html>\r\n\r\n\r\n<html>\r\n<meta charset="UTF-8">\r\n<head>\r\n\r\n    <title>FOMO</title>\r\n\r\n')
         __M_writer('    <!--<script src="')
@@ -58,9 +58,9 @@ def render_body(context,**pageargs):
         __M_writer('    <script src="/django_mako_plus/dmp-common.min.js"></script>\r\n    ')
         __M_writer(str( django_mako_plus.links(self) ))
         __M_writer('\r\n\r\n')
-        __M_writer('    <link id = "icon" rel="shortcut icon" type="image/png" href="')
-        __M_writer(str( STATIC_URL ))
-        __M_writer('homepage/media/Images/icon.png"/>\r\n\r\n\r\n</head>\r\n<body>\r\n<a href="#content" class="skip">Skip to content</a>\r\n\r\n<header>\r\n    <!--Maintenance Message-->\r\n    <div id="maintenance">\r\n        ')
+        __M_writer('    <link rel="fluid icon" href="')
+        __M_writer(str(STATIC_URL))
+        __M_writer('homepage/media/images/favicon.ico">\r\n\r\n\r\n</head>\r\n<body>\r\n<a href="#content" class="skip">Skip to content</a>\r\n\r\n<header>\r\n    <!--Maintenance Message-->\r\n    <div id="maintenance">\r\n        ')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'header_maintenance'):
             context['self'].header_maintenance(**pageargs)
         
@@ -152,9 +152,9 @@ def render_skip(context,**pageargs):
 def render_nav_main(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
         def nav_main():
             return render_nav_main(context)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n                   <li class="')
         __M_writer(str( 'active' if request.dmp.page == 'index' else '' ))
@@ -247,6 +247,6 @@ def render_footer(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/Linds/desktop/intex2_fomo/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 125, "22": 0, "48": 2, "49": 14, "50": 14, "51": 14, "52": 16, "53": 16, "54": 17, "55": 17, "56": 18, "57": 18, "58": 25, "59": 26, "60": 26, "61": 29, "62": 29, "63": 29, "68": 39, "73": 40, "78": 58, "79": 61, "80": 62, "81": 62, "82": 62, "83": 65, "84": 66, "85": 66, "86": 66, "87": 69, "88": 73, "89": 73, "90": 73, "91": 73, "92": 80, "93": 81, "94": 85, "99": 97, "104": 102, "109": 107, "114": 112, "119": 117, "124": 127, "130": 39, "141": 40, "152": 51, "159": 51, "160": 52, "161": 52, "162": 53, "163": 53, "164": 54, "165": 54, "166": 55, "167": 55, "168": 56, "169": 56, "170": 57, "171": 57, "177": 95, "183": 95, "189": 102, "200": 107, "211": 112, "222": 117, "233": 124, "239": 124, "240": 125, "241": 126, "242": 126, "248": 242}}
+{"filename": "C:/Users/Linds/Desktop/fomo_intex2/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "source_encoding": "utf-8", "line_map": {"18": 2, "20": 125, "22": 0, "48": 2, "49": 14, "50": 14, "51": 14, "52": 16, "53": 16, "54": 17, "55": 17, "56": 18, "57": 18, "58": 25, "59": 26, "60": 26, "61": 29, "62": 29, "63": 29, "68": 39, "73": 40, "78": 58, "79": 61, "80": 62, "81": 62, "82": 62, "83": 65, "84": 66, "85": 66, "86": 66, "87": 69, "88": 73, "89": 73, "90": 73, "91": 73, "92": 80, "93": 81, "94": 85, "99": 97, "104": 102, "109": 107, "114": 112, "119": 117, "124": 127, "130": 39, "141": 40, "152": 51, "159": 51, "160": 52, "161": 52, "162": 53, "163": 53, "164": 54, "165": 54, "166": 55, "167": 55, "168": 56, "169": 56, "170": 57, "171": 57, "177": 95, "183": 95, "189": 102, "200": 107, "211": 112, "222": 117, "233": 124, "239": 124, "240": 125, "241": 126, "242": 126, "248": 242}}
 __M_END_METADATA
 """

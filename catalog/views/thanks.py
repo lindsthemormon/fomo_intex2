@@ -10,6 +10,7 @@ from django.http import HttpResponseRedirect
 def process_request(request):
 
     myCatalogList = cmod.Category.objects.all()
+    your_email = request.user.email
 
     count = request.last_five
 
@@ -23,6 +24,7 @@ def process_request(request):
     # render the format
     context = {
         'categories': myCatalogList,
+        'your_email': your_email,
 
     }
     return request.dmp.render('thanks.html', context)
