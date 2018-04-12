@@ -1,0 +1,23 @@
+<%inherit file="app_base.html" />
+
+<%block name="top_center">
+<h1 class='cen'>Contact Us</h1>
+</%block>
+
+
+<%block name="content_center">
+<br>
+  <form action="/contact/" method="POST" class="cen">
+    ${ csrf_input }
+    First name:
+    <input type="text" name="fname">
+    <br><br>
+    Last name:
+    <input type="text" name="lname">
+    <br><br>
+    What's up:
+    <input type="text" name="question">
+    <br><br>
+    <input type="submit" value="Submit" class="btn btn-md btn-info">
+  </form>
+</%block>

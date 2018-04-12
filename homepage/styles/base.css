@@ -1,0 +1,102 @@
+main {
+    margin: 0;
+    padding: 0px;
+}
+
+
+#middle{
+    position: relative;
+}
+
+#left{
+    position: absolute;
+    width: 230px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+#right{
+    position: absolute;
+    width: 230px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+#center{
+    margin-left: 240px;
+    margin-right: 240px;
+    padding: 10px;
+}
+
+#bottom{
+    position: relative;
+}
+
+.blue {
+  color:#3D5A67;
+}
+
+/* a{
+color: Black;
+} */
+
+#icon{
+width: 20px;
+}
+
+.navbar{
+margin-bottom: 0px;
+}
+
+.skip {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+}
+
+.cen {
+  text-align: center;
+}
+
+.footerstuff {
+  color: #3D5A67;
+  bottom: 0%;
+}
+
+body {
+  font-family: 'Hammersmith One';
+}
+
+h1 {
+  font-family: 'Satisfy';
+  color: #CD0808;
+  font-size: 42px;
+}
+
+h2 {
+  font-family: 'Hammersmith One';
+  color: #404040;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #c00;
+}
