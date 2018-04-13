@@ -8,10 +8,14 @@
 
 <%block name="nav_main">
 
-       <li class="${ 'active' if request.dmp.page == 'index' else '' }"><a href="/">Home</a></li>
-       <li class=" ${ 'active' if request.dmp.page == 'about' else '' }"><a href="/about">About Us</a></li>
-       <li class=" ${'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
-       <li class=" ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
-       <li class=" ${ 'active' if request.dmp.page == 'terms' else '' }"><a href="/terms">Terms</a></li>
-       <li class=" ${ 'active' if request.dmp.page == 'product' else '' }"><a href="/manager/products/">Product</a></li>
+    <li class = "nav item ${ 'active' if request.dmp.page == 'index' and request.dmp.app == 'homepage' else ''}"><a href="/index/">Home</a></li>
+    <li class = "nav item ${ 'active' if request.dmp.page == 'index' and request.dmp.app == 'catalog' else ''}"><a href="/catalog/">Catalog</a></li>
+    <li class=" ${ 'active' if request.dmp.page == 'about' else '' }"><a href="/about">About Us</a></li>
+    <li class=" ${'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
+    <li class=" ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
+    <li class=" ${ 'active' if request.dmp.page == 'terms' else '' }"><a href="/terms">Terms</a></li>
+    %if request.user.is_staff:
+         <li class=" ${ 'active' if request.dmp.page == 'admin' else '' }"><a href="/admin/">Manage</a></li>
+         <li class=" ${ 'active' if request.dmp.page == 'manager' else '' }"><a href="/manager/products">Products</a></li>
+    %endif
 </%block>
