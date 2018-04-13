@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1523574458.7526429
+_modified_time = 1523577899.426022
 _enable_loop = True
 _template_filename = 'C:/Users/Linds/Desktop/fomo_intex2/catalog/templates/thanks.html'
 _template_uri = 'thanks.html'
@@ -52,7 +52,7 @@ def render_content_center(context,**pageargs):
             return render_content_center(context)
         your_email = context.get('your_email', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n    <div class="content cen">\r\n        <h1>Thank You!</h1>\r\n        <p>Your purchase is on its way.Please check your email, ')
+        __M_writer('\r\n    <div class="content cen">\r\n        <h1>Thank You!</h1>\r\n        <p>Your purchase is on its way. Please check your email, ')
         __M_writer(str(your_email))
         __M_writer(', for a receipt!</p>\r\n        <br /><br />\r\n        <a href = \'/catalog/index/\'>\r\n            <button type="button" class="btn btn-primary">Continue shopping</button>\r\n        </a>\r\n    </div>\r\n    <br /><br /><br />\r\n')
         return ''

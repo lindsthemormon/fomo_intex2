@@ -6,9 +6,9 @@ from account.models import User
 from django.contrib.auth import authenticate, login
 from catalog import models as cmod
 from django_mako_plus import view_function
+from django.contrib.admin.views.decorators import staff_member_required
 
-
-
+@staff_member_required
 @view_function
 def process_request(request, product:cmod.Product):
     # try:

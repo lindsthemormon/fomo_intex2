@@ -3,10 +3,9 @@ from django_mako_plus import view_function
 from formlib import Formless
 from django import forms
 from catalog import models as cmod
+from django.contrib.admin.views.decorators import staff_member_required
 
-
-
-
+@staff_member_required
 @view_function
 def process_request(request):
 
