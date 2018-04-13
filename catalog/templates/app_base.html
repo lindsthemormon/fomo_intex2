@@ -15,7 +15,10 @@
        <li class=" ${'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
        <li class=" ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
        <li class=" ${ 'active' if request.dmp.page == 'terms' else '' }"><a href="/terms">Terms</a></li>
-
+       %if request.user.is_staff:
+            <li class=" ${ 'active' if request.dmp.page == 'admin' else '' }"><a href="/admin/">Manage</a></li>
+            <li class=" ${ 'active' if request.dmp.page == 'manager' else '' }"><a href="/manager">Products</a></li>
+       %endif
 </%block>
 
 
