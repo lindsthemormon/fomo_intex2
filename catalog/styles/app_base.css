@@ -169,13 +169,14 @@ a {
 
 li a.active {
   color: black;
+  font-weight: bold;
 }
 
 #allprod {
   color: #696969;
 }
 
-a:hover {
+a:hover:not(.active) {
   text-decoration: none;
   color: #c00;
 }

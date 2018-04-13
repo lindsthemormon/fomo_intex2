@@ -45,7 +45,7 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index"><i class="fa fa-headphones" style="color:#3D5A67;"></i></a>
+          <a class="navbar-brand" href="/index"><i class="fa fa-headphones" style="color:#3D5A67;"></i></a>
         </div>
           <ul class="nav navbar-nav">
               <%block name="nav_main">
@@ -55,6 +55,9 @@
                    <li class=" ${'active' if request.dmp.page == 'faq' else '' }"><a href="/faq">FAQ</a></li>
                    <li class=" ${ 'active' if request.dmp.page == 'contact' else '' }"><a href="/contact">Contact</a></li>
                    <li class=" ${ 'active' if request.dmp.page == 'terms' else '' }"><a href="/terms">Terms</a></li>
+                   %if request.user.is_staff:
+                        <li class=" ${ 'active' if request.dmp.page == 'admin' else '' }"><a href="/admin/">Manage</a></li>
+                   %endif
               </%block>
         </ul>
                <ul class="nav navbar-nav navbar-right">

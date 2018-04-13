@@ -1,5 +1,5 @@
 <%inherit file="/homepage/templates/base.htm" />
-<%!from catalog import models as cmod%>
+<%! from catalog import models as cmod %>
 
 
 <%block name="menu">
@@ -23,22 +23,23 @@
 </br>
 </br>
 <ul id='catlist'>
-  <li><a id='allprod' href='/catalog/index'/>All Products</a></li>
-  <%! from catalog import models as cmod %>
-  % for c in cmod.Category.objects.all():
-    % if category == c.name:
-      <li><a class ='active' href='/catalog/index/${c.id}'/>${c.name}</a></li>
+    <%
+        category_list = cmod.Category.objects.all()
+        product_list = cmod.Product.objects.all()
+    %>
+    % if cat_id == 0:
+        <li id='all_products'><a class='active' href='/catalog/index/'> All Products </a></li>
     % else:
-      <li><a href='/catalog/index/${c.id}'/>${c.name}</a></li>
+        <li id='all_products'><a href='/catalog/index/'> All Products </a></li>
     % endif
-  % endfor
-
-    <!--<ul id="category_list">-->
-        <!--<li><a  href="/catalog/index/0/">All Products</a></li>-->
-        <!--%for c in categoryList:-->
-            <!--<li><a id="name" href="/catalog/index/${c.id}/">${c.name}</a></li>-->
-        <!--%endfor-->
-    <!--</ul>-->
+    % for c in category_list:
+        % if category == c.name:
+            <li><a class='active' href='/catalog/index/${ c.id }'/> ${ c.name } </a></li>
+        % else:
+            <li><a href='/catalog/index/${ c.id }'/> ${ c.name } </a></li>
+        % endif
+    % endfor
+</ul>
 </%block>
 
 

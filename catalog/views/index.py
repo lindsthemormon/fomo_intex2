@@ -26,13 +26,21 @@ def process_request(request, cat:cmod.Category=None):
         productList = cmod.Product.objects.all().filter(status='A')
 
         if cat is not None:
-                productList=cmod.Product.objects.filter(category=cat.id).filter(status='A')
+            productList=cmod.Product.objects.filter(category=cat.id).filter(status='A')
+            category = cat.name
+            cat_id = cat.id
+        else:
+            cat_id = 0
+            category = None;
+
 
         myPages = math.ceil(productList.count()/6)
         context={
                 'categoryList': categoryList,
                 'productList': productList,
                 'myPages': myPages,
+                'category': category,
+                'cat_id': cat_id,
                 'name': cat.name if cat is not None else "All Products",
                 jscontext("catid"): cat.id if cat is not None else 0,
                 jscontext("pagenum"): myPages,
